@@ -3,7 +3,7 @@ node{
 		git branch: 'wartomcat', url: 'https://github.com/suman-stha/devopsprojects.git'
 	}
 	stage('Compile-Package'){
-		def mvnHome = tool name: 'maven-3', type: 'maven'
+		def mvnHome = tool name: 'mymaven', type: 'maven'
 		sh "${mvnHome}/bin/mvn package"
 	}
 	stage('Deploy to Tomcat'){
