@@ -17,7 +17,7 @@ node{
     	}
 	stage('Push Docker Image'){
         withCredentials([string(credentialsId: 'docker-pwd', variable: 'dockerHubPwd')]){
-            sh "docker login -u care2manoj -p ${dockerHubPwd}"
+            sh "docker login -u sumand123 -p ${dockerHubPwd}"
     	}
         sh 'docker push sumand123/devopsprojects:2.0.0'
     	}
