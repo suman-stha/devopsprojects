@@ -10,6 +10,7 @@ node{
 		sshagent(['pem-tomcatser']) {
 		sh 'scp -o StrictHostKeyChecking=no target/*.war ec2-user@52.15.194.138:/opt/tomcat9/webapps/'
 	}
+	}
 		stage('Build Docker Image'){
         sh 'docker build -t sumand123/devopsprojects:2.0.0 .'
         
@@ -25,6 +26,6 @@ node{
         sshagent(['pem-tomcatser']) {
             sh "ssh -o StrictHostKeyChecking=no ec2-user@52.15.194.138 ${dockerRun}"
 	}
-	
+	}
 
 }
