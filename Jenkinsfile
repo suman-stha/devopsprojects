@@ -24,7 +24,7 @@ node{
 	stage('Run Container on Prod Server'){
         def dockerRun = 'sudo docker run -p 5000:8080 -d sumand123/devopsprojects:2.0.0'
         sshagent(['pem-tomcatser']) {
-            sh "ssh -o StrictHostKeyChecking=no ec2-user@18.221.18.235 ${dockerRun}"
+            sh "ssh -o StrictHostKeyChecking=no ec2-user@3.16.15.121 ${dockerRun}"
 	}
 	}
 
