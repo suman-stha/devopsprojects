@@ -12,7 +12,7 @@ node{
 	}
 	}
 		stage('Build Docker Image'){
-        sh 'sudo docker build -t sumand123/devopsprojects:2.0.0 .'
+        sh 'docker build -t sumand123/devopsprojects:2.0.0 .'
         
     	}
 	stage('Push Docker Image'){
