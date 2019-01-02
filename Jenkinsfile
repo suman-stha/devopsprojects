@@ -11,3 +11,4 @@ node{
 		sh 'scp -o StrictHostKeyChecking=no target/*.war ec2-user@18.191.216.34:/opt/tomcat9/webapps/'
 	}
 	}
+}
