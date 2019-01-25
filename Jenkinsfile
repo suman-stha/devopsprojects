@@ -10,8 +10,8 @@ node{
         sh 'docker build -t sumand123/maven-project:7.0.0 .'
     }
 	stage('Deploy to Tomcat'){
-		sshagent(['pem-tomcatser']) {
-		sh 'scp -o StrictHostKeyChecking=no target/*.war ec2-user@18.191.216.34:/opt/tomcat9/webapps/'
+		sshagent(['tomcat']) {
+		sh 'scp -o StrictHostKeyChecking=no target/*.war ec2-user@18.206.251.244:/opt/tomcat9/webapps/'
 	}
 	}
 		stage('Build Docker Image'){
