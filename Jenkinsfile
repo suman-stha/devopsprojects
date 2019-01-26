@@ -15,14 +15,14 @@ node{
 	}
 	}
 		stage('Build Docker Image'){
-			sh 'docker build -t sumand123/devopsprojects:${BUILD_NUMBER} .'
+			sh 'docker build -t sumand123/maven-project:${BUILD_NUMBER} .'
         
     	}
 	stage('Push Docker Image'){
         withCredentials([string(credentialsId: 'docker-pwd', variable: 'dockerHubPwd')]){
             sh "docker login -u sumand123 -p ${dockerHubPwd}"
     	}
-        sh 'docker push sumand123/devopsprojects:2.0.0'
+		sh 'docker push sumand123/maven-project:${BUILD_NUMBER}'
     	}
 	//stage('Run Container on Prod Server'){
         //def dockerRun = 'sudo docker run -p 5000:8080 -d sumand123/devopsprojects:2.0.0'
