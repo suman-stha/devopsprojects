@@ -7,7 +7,7 @@ node{
 		sh "${mvnHome}/bin/mvn package"
 	}
 	 stage('Build Docker Image'){
-        sh 'docker build -t sumand123/maven-project:7.0.0 .'
+		 sh 'docker build -t sumand123/maven-project:${BUILD_NUMBER} .'
     }
 	stage('Deploy to Tomcat'){
 		sshagent(['tomcat']) {
@@ -15,7 +15,7 @@ node{
 	}
 	}
 		stage('Build Docker Image'){
-        sh 'docker build -t sumand123/devopsprojects:2.0.0 .'
+			sh 'docker build -t sumand123/devopsprojects:${BUILD_NUMBER} .'
         
     	}
 	stage('Push Docker Image'){
